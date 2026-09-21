@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research & Thesis · Md. Esha Ruhulla</title>
+  <meta name="description" content="Md. Esha Ruhulla — Civil and Environmental Engineering, Islamic University of Technology (IUT), Dhaka. Undergraduate thesis on forward prediction of tunnelling-induced settlement; numerical modelling in PLAXIS 3D.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <aside class="side">
+    
+    <img class="portrait" src="profile.jpg" alt="Md. Esha Ruhulla">
+    
+    <h1 class="name"><a href="index.html">Md. Esha Ruhulla</a></h1>
+    <p class="affil">
+      Dept. of Civil and Environmental Engineering<br>
+      Islamic University of Technology (IUT)<br>
+      Gazipur, Dhaka, Bangladesh
+    </p>
+
+    <nav class="nav">
+      
+        
+        <a href="index.html">About</a>
+      
+        
+        <a href="research.html" class="on" aria-current="page">Research</a>
+      
+        
+        <a href="projects.html">Projects</a>
+      
+        
+        <a href="publications.html">Publications</a>
+      
+        
+        <a href="cv.html">CV</a>
+      
+    </nav>
+
+    <p class="links">
+      <a href="mailto:[your.email@iut-dhaka.edu]">Email</a>
+      <a href="CV.pdf">CV (PDF)</a>
+      
+      
+      
+      
+      
+      
+    </p>
+  </aside>
+
+  <main class="main" id="main">
+    <h2 class="page-title">Research & Thesis</h2>
+    <h3>Undergraduate thesis</h3>
+<p><strong>Forward prediction of tunnelling-induced settlement: a unified displacement function
+and a physics-informed neural network validated against controlled model tests</strong></p>
+<p class="meta">
+Dept. of Civil and Environmental Engineering, IUT · Supervisor: <strong>[Prof. Name]</strong> ·
+[Month Year] – [Month Year]
+</p>
+<p><strong>The problem.</strong> Settlement above a tunnel is still predicted with Peck's empirical
+Gaussian curve, which describes the trough with a single ground loss ratio. That
+assumes the surface only responds to <em>how much</em> soil is lost, not to <em>how</em> the tunnel
+cross-section deforms. Shahin et al.'s model tests show the assumption is unsafe for
+shallow tunnels: two excavation patterns imposed at the same 15.36% ground loss produced
+markedly different troughs. Later analytical and machine-learning treatments fixed this
+by describing the tunnel-wall movement as a truncated Fourier series — the unified
+displacement function — but in every case the coefficients were recovered by back-fitting
+a measured trough. The prediction had never been tested where the wall movement was
+independently known.</p>
+<p><strong>What I did.</strong> I took the unified displacement function, which writes the radial
+movement of the tunnel wall at polar angle θ′ as five independent modes,</p>
+<p class="eq">u<sub>r</sub> = −u₀ + a₁′ sin θ′ + b₁′ cos θ′ + a₂′ sin 2θ′ + b₂′ cos 2θ′</p>
+
+<p>where u₀ is uniform convergence, a₁′ and b₁′ are vertical and horizontal
+translation, and a₂′, b₂′ are ovalisation — and applied it to a case where the
+coefficients are set by the apparatus rather than fitted. Shahin's tests contracted a
+10 cm two-dimensional tunnel in aluminium rods with a tapered shim, so the wall movement
+was imposed. The two patterns are exactly two UDF modes: fixed-centre is uniform
+shrinkage, uᵣ = −u₀; fixed-invert additionally lowers the device, giving
+uᵣ = −u₀(1 + sin θ′). That makes the comparison a genuine out-of-sample forward
+prediction.</p>
+<p>The elastic half-plane was solved by the complex variable method — a conformal map of the
+half-plane-with-hole onto an annulus, Laurent-series potentials and least-squares
+collocation on the tunnel wall, with rigid-body motion removed. Maximum boundary residual
+was 10⁻¹⁴, and the published field case was reproduced to within 0.02 mm. I then rebuilt
+the physics-informed neural network in DeepXDE as mixed first-order elasticity with five
+outputs (uₓ, u_y, σₓₓ, σ_yy, σₓ_y). Two measures the
+source paper does not report turned out to be necessary to make it converge:
+non-dimensionalising the lengths, and grading the collocation points logarithmically
+towards the tunnel wall. Cover ratios D/B = 1, 2 and 3 were analysed at ν = 0.33.</p>
+<p><strong>What I found.</strong></p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>D/B</th><th>Pattern</th><th>Measured (cm)</th><th>UDF (cm)</th><th>FEM (cm)</th><th>R² UDF</th><th>R² FEM</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Fixed centre</td><td>0.292</td><td>0.326</td><td>0.274</td><td>0.47</td><td>0.89</td></tr>
+    <tr><td>1</td><td>Fixed invert</td><td>0.474</td><td>0.383</td><td>0.526</td><td>0.67</td><td>0.92</td></tr>
+    <tr><td>2</td><td>Fixed centre</td><td>0.229</td><td>0.202</td><td>0.193</td><td>0.26</td><td>0.82</td></tr>
+    <tr><td>2</td><td>Fixed invert</td><td>0.316</td><td>0.224</td><td>0.323</td><td>0.50</td><td>0.82</td></tr>
+    <tr><td>3</td><td>Fixed centre</td><td>0.176</td><td>0.146</td><td>0.123</td><td>0.28</td><td>0.62</td></tr>
+    <tr><td>3</td><td>Fixed invert</td><td>0.182</td><td>0.157</td><td>0.203</td><td>0.25</td><td>0.66</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="meta">Predicted and measured peak surface settlement, with R² over the full
+profile. The UDF prediction fits nothing, so these R² values are out-of-sample.</p>
+
+<p>For the fixed-centre pattern the elastic solution predicts the peak to within 12%. The
+fixed-invert pattern is systematically under-predicted, and the reason is visible in the
+trough shape: the elastic trough is 1.6 to 2.1 times wider than measured, because linear
+elasticity cannot localise deformation into a shear band. The fitted width parameter i/h
+was 0.37–0.57 for the measurements — the usual range for sand — against 0.72–0.92 for the
+elastic solution. Over all six cases the UDF explains 41% of the measured variance,
+against 79% for an elastoplastic analysis. An empirical width correction, one scale
+factor and one width factor, raises the mean R² from 0.41 to 0.91.</p>
+<p>The effect that motivated the study survives: the measured sensitivity to excavation
+pattern — peak settlement of one pattern over the other at identical ground loss — falls
+from 1.63 at D/B = 1 to 1.04 at D/B = 3. The elastic UDF reproduces that trend
+qualitatively but captures only about 28% of its magnitude at shallow cover, while the
+elastoplastic analysis errs the other way and over-predicts it at every cover.</p>
+<figure class="figure">
+  <img src="thesis-troughs.png" alt="Measured and predicted settlement troughs, and pattern sensitivity against cover ratio">
+  <figcaption>(a) Measured troughs against the elastic unified displacement function and
+  elastoplastic FEM at D/B = 1. (b) Sensitivity to excavation pattern against cover ratio.</figcaption>
+</figure>
+
+<p>On the PINN: with the wall coefficients held fixed and the analytical far field
+prescribed, it solves the boundary value problem to within 0.77% of peak settlement. That
+validates the solver — it is not evidence that the coefficients can be recovered from
+surface measurements, which is a separate and harder inverse problem.</p>
+<figure class="figure">
+  <img src="thesis-pinn.png" alt="PINN solution compared with the analytical solution for the validation case">
+  <figcaption>PINN validation against the analytical solution, DLR Lewisham case.</figcaption>
+</figure>
+
+<p><strong>Why it matters.</strong> Ground loss alone is not enough to predict settlement above a shallow
+tunnel, and an elastic forward model tells you the peak but not the width. The practical
+reading is that the analytical route is usable for a first estimate of magnitude at
+moderate cover, and needs a width correction — calibrated to soil, not to the tunnel —
+before it can be trusted near the surface where buildings actually sit.</p>
+<div class="callout">
+<p><strong>Status:</strong> [In progress — defending in Month Year]. An extended abstract from this work
+has been <strong>submitted to the International Conference on Civil Engineering (ICCE 2026)</strong>,
+Dhaka, 17–19 December 2026, and is under review. Thesis PDF, slides and the analysis code
+will be posted here.</p>
+</div>
+<hr>
+
+<h3>Methods and tools I use</h3>
+<ul>
+<li><strong>Numerical modelling</strong> — PLAXIS 3D and PLAXIS 2D (foundations, tunnelling), finite
+  element analysis to failure</li>
+<li><strong>Analytical mechanics</strong> — complex variable methods in elasticity, conformal mapping,
+  Laurent series with least-squares collocation</li>
+<li><strong>Scientific computing</strong> — Python (NumPy, SciPy, Matplotlib, openpyxl), DeepXDE and
+  PyTorch for physics-informed neural networks</li>
+<li><strong>Geotechnical</strong> — settlement trough analysis, ground loss and volume loss methods,
+  pile and raft bearing capacity</li>
+<li><strong>Other</strong> — [AutoCAD, ETABS, ArcGIS — delete what doesn't apply]</li>
+</ul>
+    <footer class="foot">
+      © 2026 Md. Esha Ruhulla · Built with Jekyll, hosted on GitHub Pages
+    </footer>
+  </main>
+
+</div>
+</body>
+</html>

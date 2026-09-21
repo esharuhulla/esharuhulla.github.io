@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Md. Esha Ruhulla</title>
+  <meta name="description" content="Md. Esha Ruhulla — Civil and Environmental Engineering, Islamic University of Technology (IUT), Dhaka. Undergraduate thesis on forward prediction of tunnelling-induced settlement; numerical modelling in PLAXIS 3D.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <aside class="side">
+    
+    <img class="portrait" src="profile.jpg" alt="Md. Esha Ruhulla">
+    
+    <h1 class="name"><a href="index.html">Md. Esha Ruhulla</a></h1>
+    <p class="affil">
+      Dept. of Civil and Environmental Engineering<br>
+      Islamic University of Technology (IUT)<br>
+      Gazipur, Dhaka, Bangladesh
+    </p>
+
+    <nav class="nav">
+      
+        
+        <a href="index.html">About</a>
+      
+        
+        <a href="research.html">Research</a>
+      
+        
+        <a href="projects.html" class="on" aria-current="page">Projects</a>
+      
+        
+        <a href="publications.html">Publications</a>
+      
+        
+        <a href="cv.html">CV</a>
+      
+    </nav>
+
+    <p class="links">
+      <a href="mailto:[your.email@iut-dhaka.edu]">Email</a>
+      <a href="CV.pdf">CV (PDF)</a>
+      
+      
+      
+      
+      
+      
+    </p>
+  </aside>
+
+  <main class="main" id="main">
+    <h2 class="page-title">Projects</h2>
+    <p class="lead">Coursework, term projects and things I built on my own. To add one, edit
+<code>_data/projects.yml</code> — nothing on this page needs to change.</p>
+
+
+<div class="entry">
+  <h3>Pile and raft foundation modelling in PLAXIS 3D</h3>
+  <p class="meta">
+    [Month] 2026
+     · Geotechnical Engineering course project · Group 6
+     · Model setup, staged construction and output analysis (PLAXIS 3D, v2024.3)
+  </p>
+
+  <p>Built three-dimensional finite element models of a pile foundation and a raft foundation on the same soil profile, loaded each to failure through staged construction, and read the ultimate bearing capacity and displacement field from the collapse step.</p>
+  <p><strong>Result:</strong> Pile foundation: 1879.85 kN ultimate capacity, 21.9 mm maximum total displacement. Raft foundation: 2517.30 kN, 117.8 mm — roughly a third more capacity than the piles, at five times the deformation.</p>
+
+  
+  <figure class="figure">
+    <img src="plaxis-pile.png" alt="PLAXIS 3D total displacement contours for the pile foundation model">
+    <figcaption>Total displacement field at the failure step, pile foundation model.</figcaption>
+  </figure>
+  
+
+  
+  <div class="tags">
+    <span class="tag">PLAXIS 3D</span><span class="tag">Finite element analysis</span><span class="tag">Foundation design</span>
+  </div>
+  
+
+  
+  
+</div>
+
+<div class="entry">
+  <h3>Raft foundation: displacement field at collapse</h3>
+  <p class="meta">
+    [Month] 2026
+     · Geotechnical Engineering course project · Group 6
+     · PLAXIS 3D modelling and post-processing
+  </p>
+
+  <p>Companion model to the pile study: the same soil profile carrying a raft, taken to the same limit state so the two systems could be compared on capacity and on the settlement each one imposes on the surrounding ground.</p>
+  <p><strong>Result:</strong> Ultimate bearing capacity 2517.30 kN; maximum total displacement 117.8 mm.</p>
+
+  
+  <figure class="figure">
+    <img src="plaxis-raft.png" alt="PLAXIS 3D total displacement contours for the raft foundation model">
+    <figcaption>Total displacement field at the failure step, raft foundation model.</figcaption>
+  </figure>
+  
+
+  
+  <div class="tags">
+    <span class="tag">PLAXIS 3D</span><span class="tag">Raft foundation</span><span class="tag">Settlement</span>
+  </div>
+  
+
+  
+  
+</div>
+
+<div class="entry">
+  <h3>Solver and PINN implementation for tunnelling-induced settlement</h3>
+  <p class="meta">
+    [Month Year] – present
+     · Thesis analysis code
+     · Solo — Python
+  </p>
+
+  <p>A complex-variable solver for the elastic half-plane with a deforming circular opening (conformal mapping, Laurent-series potentials, least-squares collocation), plus a physics-informed neural network rebuilt in DeepXDE as mixed first-order elasticity. The whole analysis regenerates from source data — every measured point is read from the source workbooks, not digitised off a printed figure.</p>
+  <p><strong>Result:</strong> Boundary residual 10⁻¹⁴; published field case reproduced to within 0.02 mm; PINN matches the analytical solution to 0.77% of peak settlement.</p>
+
+  
+
+  
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">DeepXDE / PyTorch</span><span class="tag">Complex variable methods</span><span class="tag">Reproducible analysis</span>
+  </div>
+  
+
+  
+  
+</div>
+
+
+    <footer class="foot">
+      © 2026 Md. Esha Ruhulla · Built with Jekyll, hosted on GitHub Pages
+    </footer>
+  </main>
+
+</div>
+</body>
+</html>
