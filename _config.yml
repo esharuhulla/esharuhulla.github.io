@@ -1,0 +1,50 @@
+# ---------------------------------------------------------------
+# EDIT THIS FILE FIRST. Everything here shows up across the site.
+# Items in [brackets] are the ones I couldn't fill in for you.
+# ---------------------------------------------------------------
+
+title: Md. Esha Ruhulla
+tagline: Geotechnical Engineering · Tunnelling-induced ground movement
+description: >-
+  Md. Esha Ruhulla — Civil and Environmental Engineering, Islamic University of
+  Technology (IUT), Dhaka. 2026 graduate. Undergraduate thesis on forward prediction of
+  tunnelling-induced settlement; numerical modelling in PLAXIS 3D.
+
+author:
+  name: Md. Esha Ruhulla
+  photo: /assets/img/profile.jpg          # replace with a real photo, square, ~600x600
+  department: Dept. of Civil and Environmental Engineering
+  institution: Islamic University of Technology (IUT)
+  location: Gazipur, Dhaka, Bangladesh
+  email: esharuhulla120@gmail.com
+  cv: /files/CV.pdf                        # put your CV PDF at files/CV.pdf
+
+# Delete a line to hide that link
+social:
+  google_scholar:   # https://scholar.google.com/citations?user=XXXX
+  orcid:            # https://orcid.org/0000-0000-0000-0000
+  researchgate:     # https://www.researchgate.net/profile/XXXX
+  github:           # https://github.com/yourusername
+  linkedin:         # https://www.linkedin.com/in/yourusername
+  twitter:
+
+url: ""
+baseurl: ""
+
+nav:
+  - { title: "About",        url: "/" }
+  - { title: "Research",     url: "/research/" }
+  - { title: "Projects",     url: "/projects/" }
+  - { title: "Publications", url: "/publications/" }
+  - { title: "CV",           url: "/cv/" }
+
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
